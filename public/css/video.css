@@ -295,7 +295,7 @@
     text-align: left;
     padding: 20px 0;
     padding-left: 20px;
-    width: 250px;
+    width: 200px;
     background-color: rgb(255, 255, 255);
     z-index: 100;
     border-radius: 4px;
@@ -441,6 +441,8 @@
     font-size: 20px;
     color: rgb( 102, 102, 102);
     background-color: #e5e5e5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .wrap-bg .mejs-inner {

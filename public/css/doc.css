@@ -51,7 +51,8 @@ i {
 }
 
 .content-text p code,
-.content-text ul code, .table code {
+.content-text ul code,
+.table code {
     display: inline-block;
     background-color: #eef2f4;
     line-height: 1.5;
@@ -124,8 +125,10 @@ i {
 
 .page {
     line-height: 2;
-    padding-left: 18px;
-    margin: 0 35px 5px 10px;
+    padding-left: 20px;
+/*    margin: 0 35px 5px 10px;*/
+    margin-right: 35px;
+    margin-bottom: 5px;
 }
 
 .searchbar {
@@ -459,6 +462,7 @@ blockquote {
     width: 175px;
     margin-left: 55px;
     word-break: break-word;
+    margin-bottom: 20px;
     /* word-wrap: break-word; */
     /* white-space: inherit; */
 }
@@ -467,13 +471,26 @@ blockquote {
     margin-bottom: 30px;
 }
 
+.layout-api h1 {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.layout-api .func {
+    top: -60px;
+}
+
+.layout-api .toc {
+    width: 100%;
+}
+
 .page-right-fixed {
     margin-top: 146px;
 }
 
 .document-menu {
     background-color: rgba( 245, 245, 245, .7);
-    padding: 25px 20px 80px 20px;
+    padding: 25px 20px 20px 20px;
     border-top: 1px solid #e69628;
     border-bottom: 1px solid #e69628;
 }

@@ -41,7 +41,6 @@ $(function () {
         // array of keyboard commands
         keyActions: []
     });
-
 });
 
 $(function () {
@@ -165,11 +164,11 @@ $(function () {
         //重新生成排好序的数组
         if (index == 0) {
             timeCardsArr.sort(function (a, b) {
-                return a.Date - b.Date;
+                return b.Date - a.Date;
             });
         } else {
             timeCardsArr.sort(function (a, b) {
-                return b.Date - a.Date;
+                return a.Date - b.Date;
             });
         }
         for (i = 0; i < cardJQ.length; i++) {
@@ -178,4 +177,8 @@ $(function () {
         $(".main-function-2 ul").slideUp(100);
         $(".func-2 .li-text").text(liText);
     });
+
+    timeLi.eq(0).click();
+
+
 });

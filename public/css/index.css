@@ -47,7 +47,15 @@
 .item-logo {
     padding-top: 33px;
 }
-
+.item-2 .item-logo {
+    padding-top: 37.5px;
+}
+.item-3 .item-logo {
+    padding-top: 40px;
+}
+.item-last .item-logo {
+    padding-top: 50px;
+}
 .item-title {
     font-size: 18px;
     color: rgb( 51, 51, 51);
