@@ -1,0 +1,55 @@
+{
+  "name": "raneto",
+  "version": "0.2.0",
+  "description": "Markdown powered Knowledgebase",
+  "author": {
+    "name": "Gilbert Pellegrom",
+    "email": "gilbert@pellegrom.me"
+  },
+  "license": "MIT",
+  "keywords": [
+    "raneto",
+    "knowledgebase",
+    "markdown"
+  ],
+  "main": "./app",
+  "scripts": {},
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.2.0",
+    "glob": "^4.0.0",
+    "hogan-express": "^0.5.2",
+    "lunr": "https://github.com/nandy007/lunr.js.git#0cf464ce0c373dd6f1746724d9e66a90366060a8",
+    "moment": "^2.6.0",
+    "morgan": "~1.0.0",
+    "pinyin": "^2.5.0",
+    "static-favicon": "~1.0.0",
+    "underscore": "^1.6.0",
+    "underscore.string": "^2.3.3",
+    "concat-stream": "^1.4.8",
+    "extend-shallow": "^1.1.2",
+    "gray-matter": "^2.0.0",
+    "markdown-link": "^0.1.1",
+    "minimist": "^1.1.1",
+    "object.pick": "^1.1.1",
+    "remarkable": "^1.6.0",
+    "repeat-string": "^1.5.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-csso": "^1.0.1",
+    "gulp-font-spider": "^0.2.0",
+    "gulp-fontmin": "^0.7.3",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^1.5.1"
+  }
+}

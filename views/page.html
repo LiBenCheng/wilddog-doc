@@ -1,0 +1,45 @@
+<div class="col-md-2 menu">
+    {{#pages}} {{#is_dir}}
+    <li class="category {{#active}} active{{/active}}">
+        <div class="category-title"><a href="{{slug}}">{{title}}</a></div>
+        <ul class="pages">
+            {{#files}} {{#is_md}}
+            <li class="page {{#active}} active{{/active}}"><a href="/{{slug}}" class="unvisited">{{title}}</a>
+            </li>
+            {{/is_md}} {{/files}}
+        </ul>
+    </li>
+    {{/is_dir}} {{/pages}}
+    <div class="searchbar">
+        <a class="search">
+            <i>p</i>
+        </a>
+        <input type="search" placeholder="搜索文档" name="query" class="search-input">
+    </div>
+</div>
+
+<div class="col-md-9 col-md-offset-1 layout-page">
+    <div class="page-right">
+        <div class="page-right-fixed">
+            <div class="document-menu">
+                <div class="menu-title">内容大纲</div>
+                {{#pages}} {{#files}} {{#active}} {{/active}} {{/files}} {{/pages}} {{{toc}}}
+            </div>
+        </div>
+    </div>
+    <section class="content">
+        {{#pages}} {{#files}} {{#active}}
+        <h1> {{title}} </h1> {{/active}} {{/files}} {{/pages}}
+        <div class="func pull-right">
+            <!-- 
+            <div class="func-section" id="func-section-video"><img src="/images/func-video.svg" class="func-img">视频</div>
+            <div class="func-section" id="func-section-print"><img src="/images/func-print.svg" class="func-img">打印</div>
+             -->
+        </div>
+        <div class="content-text">{{{ content }}}</div>
+    </section>
+</div>
+
+<div class="back-top-ab">
+    <div class="back-top"><i class="wd-font">R</i></div>
+</div>

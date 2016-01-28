@@ -1,0 +1,609 @@
+#wrap {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+i {
+    font-family: wd-icon;
+    font-style: normal;
+}
+
+
+/*.container {
+    overflow: hidden;
+}*/
+
+.main-body {
+    padding-bottom: 180px;
+}
+
+.menu-item2 .menu-link {
+    color: rgb(51, 51, 51);
+}
+
+
+/*.page-tile + ul > li > ul {
+    display: none;
+}*/
+
+.content-text ul li {
+    line-height: 2;
+}
+
+.content-text img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content-text p code,
+.content-text ul code, .table code {
+    display: inline-block;
+    background-color: #eef2f4;
+    line-height: 1.5;
+    font-style: normal;
+    font-size: 13px;
+    border-radius: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-left: 2px;
+    margin-right: 2px;
+    /*    word-break: break-all;*/
+}
+
+
+/*************************************************/
+
+
+/*左边导航的部分*/
+
+.menu {
+    padding-top: 60px;
+}
+
+.category {
+    padding-left: 0;
+    margin-bottom: 14px;
+}
+
+.category-title {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: rgb( 30, 50, 70);
+    /*padding-left: 30px;*/
+    letter-spacing: 1px;
+}
+
+.menu .category > ul {
+    display: none;
+}
+
+.menu>.active>ul {
+    display: block;
+}
+
+.category-title a {
+    color: rgb( 30, 50, 70);
+}
+
+.unvisited {
+    color: rgb( 102, 102, 102) !important;
+}
+
+.menu .pages .page a {
+    color: rgb( 204, 204, 204);
+}
+
+.menu .pages .active {
+    background-color: #82b9eb;
+}
+
+.menu .pages .active > a {
+    font-size: 13px;
+    font-weight: 300;
+    color: #ffffff !important;
+}
+
+.pages {
+    padding-left: 0;
+}
+
+.page {
+    line-height: 2;
+    padding-left: 18px;
+    margin: 0 35px 5px 10px;
+}
+
+.searchbar {
+    position: relative;
+    overflow: hidden;
+}
+
+.search {
+    color: #ccc;
+}
+
+.search i {
+    position: absolute;
+    font-size: 12px;
+    left: 0px;
+    top: 27px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.search-input {
+    border: none;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    height: 36px;
+    line-height: 36px;
+    padding-left: 27px;
+    background-color: #fcfcfc;
+}
+
+.search-input:active,
+.search-input:visited,
+.search-input:focus {
+    outline: none;
+    background-color: #fcfcfc;
+}
+
+
+/*左边导航的部分结束*/
+
+
+/*右边正文开始*/
+
+.content {
+    padding-top: 62px;
+    letter-spacing: 0.5px;
+}
+
+.content-text {
+    padding-top: 50px;
+}
+
+h1 {
+    font-size: 38px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgb( 229, 229, 229);
+    width: 460px;
+}
+
+h2 {
+    margin-bottom: 35px;
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+h4 {
+    font-size: 16px;
+    color: rgb( 102, 102, 102);
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 12px;
+}
+
+.layout-page-quick .content-text > h2 {
+    font-size: 20px;
+}
+
+.layout-page-quick .content-text > h3 {
+    font-size: 16px;
+}
+
+
+/*API的正文部分 从h1开始*/
+
+.api-content-text h1 {
+    font-size: 24px;
+    margin-bottom: 45px;
+    border: none;
+    padding-bottom: 0;
+}
+
+.api-content-text h2 {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.api-content-text h3 {
+    font-size: 14px;
+    color: rgb( 102, 102, 102);
+    margin-bottom: 14px;
+}
+
+.api-content-text pre {
+    margin-left: 100px;
+    margin-top: 43px;
+}
+
+.api-content-text table {
+    margin-top: 1rem;
+    margin-left: 100px;
+    width: 85%;
+}
+
+.api-content-text h6 {
+    font-size: 14px;
+    width: 12%;
+    text-align: right;
+    color: rgb(102, 102, 102);
+    margin-left: 0;
+    line-height: 2;
+    position: absolute;
+}
+
+.api-content-text h6 + p,
+.api-content-text h6 + ul {
+    position: relative;
+    font-size: 14px;
+    padding-left: 100px;
+    margin-bottom: 1.5rem;
+}
+
+.api-content-text h6 + p {
+    top: 2.5px;
+}
+
+.api-content-text h6 + ul {
+    top: -1.5px;
+}
+
+.api-content-text h6 + ul li {
+    margin-bottom: 12px;
+}
+
+.api-content-text p,
+.api-content-text ul {
+    padding-left: 100px;
+}
+
+.api-content-text p + p,
+.api-content-text p + ul,
+.api-content-text table + p,
+.api-content-text table + ul,
+.api-content-text pre + ul,
+.api-content-text blockquote + p,
+.api-content-text blockquote + ul {
+    margin-top: 0;
+    /*    padding-left: 100px;*/
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+.api-content-text pre + p {
+    margin-top: 0;
+    padding-left: 100px;
+    margin-top: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.api-content-text p + pre {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+
+/*API的正文部分结束 从h1开始*/
+
+.func {
+    position: relative;
+    float: right;
+    top: -35px;
+    left: -10px;
+}
+
+.func-section {
+    display: inline-block;
+    width: 60px;
+    cursor: pointer;
+    font-size: 12px;
+    color: rgb( 153, 153, 153);
+    letter-spacing: 1px;
+}
+
+#func-section-video {
+    margin-right: 20px;
+}
+
+.func-img {
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+
+.hljs {
+    padding: 0;
+    background-color: #f3f7fa;
+    color: rgb( 102, 102, 102);
+}
+
+strong {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    margin: 0;
+    margin: 1rem 0;
+}
+
+
+/*API文档顶部列表*/
+
+.toc {
+    padding-top: 35px;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    width: 460px;
+}
+
+.toc a {
+    color: #4C4545;
+}
+
+.content>.toc>ul>li {
+    padding-bottom: 50px;
+}
+
+.toc>ul>li li a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #666;
+}
+
+.wd-font {
+    font-family: "wd-icon";
+}
+
+.toc .wd-font {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-style: normal;
+    color: #e84d1e;
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toc>ul {
+    overflow: hidden;
+}
+
+.toc>ul>li>ul {
+    overflow: hidden;
+}
+
+.toc>ul>li li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 20px;
+    word-break: break-all;
+    padding-left: 20px;
+}
+
+.toc>ul>li>a {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    line-height: 30px;
+    padding-bottom: 6px;
+}
+
+.toc ul {
+    overflow: hidden;
+    padding-left: 0;
+    line-height: 28px;
+}
+
+
+/*API文档顶部列表结束*/
+
+
+/*返回顶部*/
+
+.back-top-ab {
+    float: right;
+    margin-right: 10px;
+}
+
+.back-top {
+    position: fixed;
+    bottom: 126px;
+    width: 40px;
+    height: 40px;
+    background-color: #999;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: none;
+}
+
+
+/*右边钉子效果的部分*/
+
+.page-right {
+    float: right;
+    padding: 0;
+    position: relative;
+    width: 175px;
+    margin-left: 55px;
+    word-break: break-word;
+    /* word-wrap: break-word; */
+    /* white-space: inherit; */
+}
+
+.layout-api .page-right {
+    margin-bottom: 30px;
+}
+
+.page-right-fixed {
+    margin-top: 146px;
+}
+
+.document-menu {
+    background-color: rgba( 245, 245, 245, .7);
+    padding: 25px 20px 80px 20px;
+    border-top: 1px solid #e69628;
+    border-bottom: 1px solid #e69628;
+}
+
+.menu-title {
+    color: rgb( 51, 51, 51);
+    line-height: 1;
+    padding-left: 10px;
+    border-left: 5px solid rgb( 130, 185, 235);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.page-tile {
+    padding-left: 13px;
+    color: rgb( 51, 51, 51);
+    /*    line-height: 2;*/
+    margin-bottom: 16px;
+}
+
+.document-menu>ul {
+    padding-left: 20px;
+}
+
+.document-menu>ul>li {
+    list-style: disc;
+    list-style-position: outside;
+    padding-bottom: 14px;
+}
+
+.document-menu>ul>li a {
+    color: rgb( 153, 153, 153);
+}
+
+
+/*右边钉子效果的部分结束*/
+
+
+/*table*/
+
+.table {
+    border: 1px solid #e5e5e5;
+}
+
+.table a {
+    color: rgb( 65, 65, 65);
+}
+
+.table a:hover {
+    color: rgb(230, 80, 30);
+    border-bottom: 1px solid rgb(230, 80, 30);
+}
+
+.table > tbody > tr > td,
+.table > thead > tr > th {
+    border-top: 0;
+    min-width: 100px;
+}
+
+.table > thead > tr > th {
+    border: 0;
+}
+
+.table tr {
+    width: 100%;
+    font-weight: normal;
+}
+
+.table thead {
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fafafa;
+}
+
+blockquote table td {
+    width: 50%;
+}
+
+@media screen and (max-width: 1299px) {
+    .header-menu {
+        text-align: center;
+        margin-top: 24px;
+    }
+    footer,
+    .page-right {
+        display: none;
+    }
+    .selected {
+        border: 0;
+    }
+    .menu-item:hover {
+        border: 0;
+    }
+    .searchbar {
+        margin-top: 0;
+    }
+    .main-body {
+        padding: 0;
+    }
+    .api-content-text table {
+        margin-left: 0;
+        width: 100%;
+    }
+    .table > tbody > tr > td,
+    .table > thead > tr > th {
+        padding-left: 10px;
+        padding-top: 10px;
+        word-break: break-word;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .page-right,
+    .header-menu {
+        display: none;
+    }
+    .api-content-text h6 {
+        width: 14%;
+    }
+    .api-content-text h6 + p,
+    .api-content-text h6 + ul,
+    .api-content-text p + p {
+        padding-left: 18%;
+    }
+    .api-content-text pre {
+        margin-left: 18%;
+    }
+    .back-top-ab {
+        display: none;
+    }
+    h3 {
+        line-height: 1.5;
+    }
+}
