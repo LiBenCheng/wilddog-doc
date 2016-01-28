@@ -6,15 +6,13 @@ import os
 import datetime
 
 time=datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-localPath = os.getcwd()
-pathSp = localPath.split('/')
-localDir = pathSp[len(pathSp)-1]
 remote = 'root@10.18.2.200'
 remotePath = '/data/www'
 remoteDir = 'z.wilddog.com'
-tgz = localDir+".tar.gz"
-pexpect.run('tar -cvf %s %s '%(tgz,localDir),cwd='..')
-pexpect.run('scp %s %s:%s'%(tgz,remote,remotePath),cwd="..")
+tgz = "dist.tar.gz"
+localDir = "./dist"
+pexpect.run('tar -cvf %s %s '%(tgz,localDir),cwd='.')
+pexpect.run('scp %s %s:%s'%(tgz,remote,remotePath),cwd=".")
 
 
 #ssh
@@ -46,12 +44,9 @@ ssh.expect('#')
 ssh.sendline('cd %s'%(remoteDir))
 ssh.expect('#')
 
-# stop
-ssh.sendline('forever stop ./bin/www')
-ssh.expect('#')
 
 # start
-ssh.sendline('forever start ./bin/www')
+ssh.sendline('NODE_ENV=production forever restart /data/www/z.wilddog.com/bin/www')
 ssh.expect('#')
 
 # cleanup
