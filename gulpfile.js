@@ -42,7 +42,7 @@ gulp.task('image',function(){
 gulp.task('font',['copy'],function(done){
     var buffers = [];
     gulp
-        .src(['views/index.html','views/home.html'])
+        .src(['views/**/*.html'])
         .on('data', function (file) {
             buffers.push(file.contents);
         })
@@ -52,7 +52,7 @@ gulp.task('font',['copy'],function(done){
                 .pipe(fontmin({
                     text:text
                 }))
-                .pipe(gulp.dest('dist/public/font'))
+                .pipe(gulp.dest('dist/public/fonts'))
                 .on('end',done)
         });
 })
