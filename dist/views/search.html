@@ -1,0 +1,30 @@
+<div class="col-md-2 menu">
+    {{#pages}} {{#is_dir}}
+    <li class="category {{#active}} active{{/active}}">
+        <div class="category-title"><a href="{{slug}}">{{title}}</a></div>
+        <ul class="pages">
+            {{#files}} {{#is_md}}
+            <li class="page {{#active}} active{{/active}}"><a href="/{{slug}}" class="unvisited">{{title}}</a>
+            </li>
+            {{/is_md}} {{/files}}
+        </ul>
+    </li>
+    {{/is_dir}} {{/pages}}
+</div>
+
+<div class="col-md-9 col-md-offset-1">
+    <section class="content search">
+        <h2 class="title">搜索: {{search}}</h2> {{#searchResults.length}} {{#searchResults}}
+        <div class="page">
+            <h3 class="page-title"><a href="/{{slug}}">{{title}}</a></h3>
+            <div class="page-excerpt">{{excerpt}}</div>
+        </div>
+        {{/searchResults}} {{/searchResults.length}} {{^searchResults.length}}
+        <p class="nothing-found">抱歉，没有找到 "{{search}}"</p>
+        {{/searchResults.length}}
+    </section>
+</div>
+
+<div class="back-top-ab">
+    <div class="back-top"><i class="wd-font">R</i></div>
+</div>
