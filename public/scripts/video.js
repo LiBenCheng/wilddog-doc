@@ -44,12 +44,11 @@ $(function () {
 });
 
 $(function () {
-    $(".card").hover(function () {
+    $(".card").hover(function (e) {
         $(this).children(".card-text").show();
     }, function () {
         $(this).children(".card-text").hide();
     });
-
 
     $(".video-selects li").click(function () {
         var index = $(this).index();
@@ -62,6 +61,8 @@ $(function () {
         $(".wrap-bg").show();
         $(".wrap-bg").children(".video-overall").eq(index).show();
     });
+
+
 
     //点击出现下拉菜单
     $(".func-1").click(function (event) {
@@ -101,19 +102,20 @@ $(function () {
         $(".main-func ul").slideUp(100);
     };
 
-    $(".video-cancel").on("click", function () {
-        var video = $(".video-overall video");
-        $(this).parents(".wrap-bg").hide();
-        $(this).parents(".wrap-bg").children(".video-overall").hide();
-        for (i = 0; i < video.length; i++) {
-            $(".video-overall video")[i].pause();
-        }
+    $(".cards .card").click(function () {
+
+        $(".wrap-bg").show();
+        $(this).children(".video-overall").show();
     });
 
-    $(".cards .card").click(function () {
-        var index = $(this).index();
-        $(".wrap-bg").show();
-        $(".wrap-bg").children(".video-overall").eq(index).show();
+
+    $(".video-overall .video-cancel").click(function (e) {
+        event.stopPropagation();
+        $(".wrap-bg").hide();
+        $(this).parent(".video-overall").hide();
+        /*    for (i = 0; i < video.length; i++) {
+                $(".video-overall video")[i].pause();
+            }*/
     });
 
 
@@ -179,6 +181,7 @@ $(function () {
     });
 
     timeLi.eq(0).click();
+
 
 
 });
