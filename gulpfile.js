@@ -14,32 +14,42 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 gulp.task('copy', function () {
-    return gulp.src(['bower_components/**/*.*','views/**/*.html','config.js','app.js','bin/www','markdown-toc.js','marked.js','raneto.js','content/**/*','package.json','public/*.*','public/fonts/**/*.*','node_modules/**/*.*'],{base:'.','buffer':false})
+    return gulp.src(['bower_components/**/*.*', 'views/**/*.html', 'config.js', 'app.js', 'bin/www', 'markdown-toc.js', 'marked.js', 'raneto.js', 'content/**/*', 'package.json', 'public/*.*', 'public/fonts/**/*.*', 'node_modules/**/*.*'], {
+            base: '.',
+            'buffer': false
+        })
         .pipe(gulp.dest('dist'));
 })
 
-gulp.task('css',function(){
-    return gulp.src('public/css/**/*.css',{base:'.'})
+gulp.task('css', function () {
+    return gulp.src('public/css/**/*.css', {
+            base: '.'
+        })
         .pipe(csso())
         .pipe(gulp.dest('dist'))
 })
-gulp.task('js',function(){
-    return gulp.src('public/scripts/**/*.js',{base:'.'})
+gulp.task('js', function () {
+    return gulp.src('public/scripts/**/*.js', {
+            base: '.'
+        })
         .pipe(uglify())
         .pipe(gulp.dest('dist'))
 })
-gulp.task('image',function(){
-     return gulp.src('public/images/**/*.{svg,png,jpg}',{base:'.'})
+gulp.task('image', function () {
+    return gulp.src('public/images/**/*.{svg,png,jpg,gif}', {
+            base: '.'
+        })
         .pipe(imagemin({
-            progressive:true,
-            svgoPlugins: [{removeViewBox: false}]
+            progressive: true,
+            svgoPlugins: [{
+                removeViewBox: false
+            }]
         }))
         .pipe(gulp.dest('dist'))
-    
+
 })
 
-
-gulp.task('font',['copy'],function(done){
+gulp.task('font', ['copy'], function (done) {
     var buffers = [];
     gulp
         .src(['views/**/*.html'])
@@ -50,11 +60,11 @@ gulp.task('font',['copy'],function(done){
             var text = Buffer.concat(buffers).toString('utf-8');
             gulp.src('public/fonts/fzltxh.ttf')
                 .pipe(fontmin({
-                    text:text
+                    text: text
                 }))
                 .pipe(gulp.dest('dist/public/fonts'))
-                .on('end',done)
+                .on('end', done)
         });
 })
 
-gulp.task('build',['copy','css','js','image','font'])
+gulp.task('build', ['copy', 'css', 'js', 'image', 'font'])
