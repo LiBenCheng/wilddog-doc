@@ -1,261 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 <url>
-<loc>http://z.wilddog.com/</loc>
-<priority>1.0</priority>
-<lastmod>2015-05-13T17:07:18+08:00</lastmod>
-<changefreq>Always</changefreq>
+  <loc>https://z.wilddog.com/</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com</loc>
-<priority>1.0</priority>
-<lastmod>2015-05-13T17:07:26+08:00</lastmod>
-<changefreq>Always</changefreq>
+  <loc>https://z.wilddog.com/overview/introduction</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/5m/</loc>
-<priority>0.8</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/questions</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/5m</loc>
-<priority>0.8</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/video</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/android/api/</loc>
-<priority>0.5</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/overview/app</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/android/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/overview/storage</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/android/quickstart/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/overview/realtime</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/auth/authentication/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/overview/knowledge</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/device/c_api/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/quickstart</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/device/coap_api/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/crud</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/device/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/auth</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/device/quickstart/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/advanced</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/faq/qa/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/api</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/faq/roadmap/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/libraries</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/ios/quickstart/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/example</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/overview/guide</loc>
-<priority>0.8</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/web/recipes</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/rest/quickstart/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/quickstart</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/rule/api/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/crud</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/rule/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/api</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/rule/quickstart/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/auth</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/web/api/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/advanced</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/web/example/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/libraries</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/web/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/android/example</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>http://z.wilddog.com/web/quickstart/</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/quickstart</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/android/api</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:29+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/crud</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/android/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/auth</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/android/quickstart</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/advanced</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/auth/authentication</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/api</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/device/c_api</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:29+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/libraries</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/device/coap_api</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:29+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/ios/example</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/device/quickstart</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/c/quickstart</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/faq/qa</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/c/crud</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/faq/roadmap</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:29+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/c/advanced</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/ios/quickstart</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/c/api</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/overview/guide</loc>
-<priority>0.8</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/c/arduinoApi</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/rest/quickstart</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/c/example</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/rule/api</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:29+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/rule/quickstart</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/rule/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:29+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/rule/guide</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/rule/quickstart</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/rule/api</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/web/api</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/practice/data</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/web/example</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/practice/array</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/web/guide</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:28+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/rest/quickstart</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://z.wilddog.com/web/quickstart</loc>
-<priority>0.4</priority>
-<lastmod>2015-05-13T17:07:27+08:00</lastmod>
-<changefreq>weekly</changefreq>
+  <loc>https://z.wilddog.com/rest/guide</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://z.wilddog.com/rest/api</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://z.wilddog.com/rest/library</loc>
+  <changefreq>weekly</changefreq>
 </url>
 </urlset>

@@ -24,7 +24,7 @@ $(".item").hover(function (event) {
     var windowWidth = $(window).width();
     if (windowWidth < 1300) {
         $("#item1").click(function () {
-            window.location.href = "/overview/guide"
+            window.location.href = "/overview/introduction"
         });
         $("#item2").click(function () {
             window.location.href = "/questions"
