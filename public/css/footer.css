@@ -3,11 +3,12 @@ footer {
     border-top: 1px solid #e5e5e5;
     position: relative;
     z-index: 900;
+    width: 960px !important;
 }
 
 .footer-nav {
     float: left;
-    margin-left: -10px;
+    margin-left: -9px;
     margin-top: 16px;
 }
 
@@ -32,5 +33,5 @@ footer {
 .footer-logo {
     float: right;
     margin-top: 11px;
-    margin-right: -1px;
+    margin-right: 9px;
 }
