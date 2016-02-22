@@ -1163,7 +1163,7 @@ ChildEventListener listener = ref.addChildEventListener(new ChildEventListener()
 void addListenerForSingleValueEvent(ValueEventListener listener)
 
 ###### 说明 
-为当前节点单次数据获取绑定监听事件，此监听器只被触发一次，以返回当前节点下的所有数据。
+为当前节点单次数据获取绑定监听事件，此监听器只被触发一次，以获取当前节点下的所有数据。
 
 ###### 参数
 listener `ValueEventListener` 节点绑定的监听事件。
