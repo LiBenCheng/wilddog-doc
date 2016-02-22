@@ -1308,10 +1308,8 @@ ref()
 ###### 示例
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/student");
-var query=ref.limitToLast(10).on("child_added",function(snapshot){
-  console.log(snapshot.key());
-});
+var ref = new Wilddog("https://<app;Id>.wilddogio.com/student");
+var query=ref.limitToLast(10);
 var locationRef=query.ref();//ref==locationRef
 ```
 
