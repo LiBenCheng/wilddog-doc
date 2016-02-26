@@ -1591,10 +1591,10 @@ path `string` path为相对路径，多层级间需要使用"/"分隔，例如�
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.type()=='null'){
+	if(snapshot.val()=='null'){
 		//has been deleted
 	}
-	else if(snapshot.type()=='object'){
+	else{
 		var pm25=snapshot.child('pm25');
 		console.log("The pm25 of Bejing is",pm25.val())
 	}
