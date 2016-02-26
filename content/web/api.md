@@ -1591,7 +1591,7 @@ path `string` path为相对路径，多层级间需要使用"/"分隔，例如�
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.val()=='null'){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
 	else{
