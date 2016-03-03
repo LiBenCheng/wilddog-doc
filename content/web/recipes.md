@@ -1,5 +1,5 @@
 /*
-Title : Recipes
+Title : 代码片段
 Sort : 7
 Tmpl : page-table
 */

@@ -1,5 +1,5 @@
 /*
-Title : Examples
+Title : 示例
 Sort : 6
 Tmpl : page-table
 */
@@ -17,3 +17,4 @@ Tmpl : page-table
 |<a href="https://github.com/WildDogTeam/demo-js-crud" target="_blank">数据管理DEMO</a> |野狗官方 |介绍如何使用野狗完成增删改查 |
 
 
+更多示例请参考: <a href="https://www.wilddog.com/download/download-js-source" target="_blank">JavaScript示例源码</a>
