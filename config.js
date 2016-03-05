@@ -1,7 +1,7 @@
 var config = {
 
 	// Your site title (format: page_title - site_title)
-	site_title: '开发文档 - 国内技术领先的实时后端云',
+	site_title: '野狗 - 文档',
 
 	// The base URL of your site (can use %base_url% in Markdown files)
 	base_url: '',
