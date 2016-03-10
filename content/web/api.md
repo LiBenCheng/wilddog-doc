@@ -1743,10 +1743,10 @@ ref.once("value", function(snapshot) {
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.type()=='null'){
+	if(snapshot == null){
 		//has been deleted
 	}
-	else if(snapshot.type()=='object'){
+	else {
 		if(snapshot.hasChild('pm25')){
 			var pm25=snapshot.child('pm25');
 			var key=snapshot.key();
@@ -1793,10 +1793,10 @@ ref()
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.type()=='null'){
+	if(snapshot == null){
 		//has been deleted
 	}
-	else if(snapshot.type()=='object'){
+	else {
 		if(snapshot.hasChild('pm25')){
 			var pm25=snapshot.child('pm25');
 			var key=snapshot.key();
