@@ -1054,10 +1054,10 @@ void
 
 ----
 
-##  onChildAdded()
+##  onDataChange()
 
 ###### 定义
-void onChildAdded(DataSnapshot snapshot,
+void onDataChange(DataSnapshot snapshot,
                   String previousChildName)
 
 ###### 说明 
