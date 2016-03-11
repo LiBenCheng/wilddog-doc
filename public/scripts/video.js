@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     $('video').mediaelementplayer({
         // if the <video width> is not specified, this is the default
         //            defaultVideoWidth: 480,
@@ -43,20 +43,20 @@ $(function () {
     });
 });
 
-$(function () {
-    $(".card").hover(function (e) {
+$(function() {
+    $(".card").hover(function(e) {
         $(this).children(".card-text").show();
-    }, function () {
+    }, function() {
         $(this).children(".card-text").hide();
     });
 
-    $(".video-selects li").click(function () {
+    $(".video-selects li").click(function() {
         var index = $(this).index();
         $(this).addClass("active").siblings().removeClass("active");
         $(".video-selected li").eq(index).addClass("active").siblings().removeClass("active");
     });
 
-    $(".video-selected li").click(function () {
+    $(".video-selected li").click(function() {
         var index = $(this).index();
         $(".wrap-bg").show();
         $(".wrap-bg").children(".video-overall").eq(index).show();
@@ -65,7 +65,7 @@ $(function () {
 
 
     //点击出现下拉菜单
-    $(".func-1").click(function (event) {
+    $(".func-1").click(function(event) {
         var e = window.event || event;
         if (e.stopPropagation) {
             e.stopPropagation();
@@ -77,7 +77,7 @@ $(function () {
         $(".func-2").siblings("ul").slideUp(100);
     });
 
-    $(".func-2").click(function (event) {
+    $(".func-2").click(function(event) {
         var e = window.event || event;
         if (e.stopPropagation) {
             e.stopPropagation();
@@ -89,7 +89,7 @@ $(function () {
         $(".func-1").siblings("ul").slideUp(100);
     });
 
-    $(".main-func ul").click(function (event) {
+    $(".main-func ul").click(function(event) {
         var e = window.event || event;
         if (e.stopPropagation) {
             e.stopPropagation();
@@ -98,24 +98,23 @@ $(function () {
         }
     });
 
-    document.onclick = function () {
+    document.onclick = function() {
         $(".main-func ul").slideUp(100);
     };
 
-    $(".cards .card").click(function () {
+    $(".cards .card").click(function() {
 
         $(".wrap-bg").show();
         $(this).children(".video-overall").show();
     });
 
 
-    $(".video-overall .video-cancel").click(function (e) {
+    $(".video-overall .video-cancel").click(function(e) {
         event.stopPropagation();
         $(".wrap-bg").hide();
         $(this).parent(".video-overall").hide();
-        /*    for (i = 0; i < video.length; i++) {
-                $(".video-overall video")[i].pause();
-            }*/
+        var currentVideo = $(this).parent(".video-overall").find("video.video-player")[0]
+        currentVideo.pause();
     });
 
 
@@ -131,7 +130,7 @@ $(function () {
     cardsArr[4] = "c";
 
     /*类别分类*/
-    funcLi.click(function () {
+    funcLi.click(function() {
         var index = $(this).index();
         var type = cardsArr[index];
         var liText = $(this).text();
@@ -150,7 +149,7 @@ $(function () {
     var dateTime = $(".card .card-bottom .card-date");
     var timeCardsArr = new Array;
     var cardJQ = $(".cards .card");
-    cardJQ.each(function (index) {
+    cardJQ.each(function(index) {
         var thisObj = $(this);
         var dateTimeText = $(this).find(".card-date").text();
         var dateNum = Date.parse(dateTimeText);
@@ -160,16 +159,16 @@ $(function () {
         });
     });
 
-    timeLi.click(function () {
+    timeLi.click(function() {
         var index = $(this).index();
         var liText = $(this).text();
         //重新生成排好序的数组
         if (index == 0) {
-            timeCardsArr.sort(function (a, b) {
+            timeCardsArr.sort(function(a, b) {
                 return b.Date - a.Date;
             });
         } else {
-            timeCardsArr.sort(function (a, b) {
+            timeCardsArr.sort(function(a, b) {
                 return a.Date - b.Date;
             });
         }
@@ -181,7 +180,4 @@ $(function () {
     });
 
     timeLi.eq(0).click();
-
-
-
 });
