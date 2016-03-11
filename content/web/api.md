@@ -1660,10 +1660,10 @@ key 输入参数,关注子节点的key
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.type()=='null'){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
-	else if(snapshot.type()=='object'){
+	else {
 		if(snapshot.hasChild('pm25')){
 			var pm25=snapshot.child('pm25');
 			console.log("The pm25 of Bejing is",pm25.val());
@@ -1743,10 +1743,10 @@ ref.once("value", function(snapshot) {
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.type()=='null'){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
-	else if(snapshot.type()=='object'){
+	else {
 		if(snapshot.hasChild('pm25')){
 			var pm25=snapshot.child('pm25');
 			var key=snapshot.key();
@@ -1793,10 +1793,10 @@ ref()
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot.type()=='null'){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
-	else if(snapshot.type()=='object'){
+	else {
 		if(snapshot.hasChild('pm25')){
 			var pm25=snapshot.child('pm25');
 			var key=snapshot.key();

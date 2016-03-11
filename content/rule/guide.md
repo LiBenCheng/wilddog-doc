@@ -520,7 +520,7 @@ System.out.println(token);
 ``` json
 {
     "v" : 0,
-    "iat" : "1437520447",
+    "iat" : 1437520447,
     "d" : {
         "uid" : "sampleId"
     },
