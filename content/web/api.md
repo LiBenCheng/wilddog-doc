@@ -1660,7 +1660,7 @@ key 输入参数,关注子节点的key
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot == null){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
 	else {
@@ -1743,7 +1743,7 @@ ref.once("value", function(snapshot) {
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot == null){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
 	else {
@@ -1793,7 +1793,7 @@ ref()
 ref = new Wilddog("https://<appId>.wilddogio.com/city/Beijing");
 
 ref.on('child_changed',function(snapshot){
-	if(snapshot == null){
+	if(snapshot.val() == null){
 		//has been deleted
 	}
 	else {
