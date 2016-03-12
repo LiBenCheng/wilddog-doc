@@ -503,7 +503,7 @@ Boolean
 ## endsWith()
 
 ###### 定义
-Boolean endsWidth(String substring)
+Boolean endsWith(String substring)
 
 ###### 说明 
 以一个子串开头结尾。
