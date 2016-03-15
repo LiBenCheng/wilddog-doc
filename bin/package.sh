@@ -1,21 +1,11 @@
 #! /bin/sh
-PRG="$0"
-while [ -h "$PRG" ]; do
-      ls=`ls -ld "$PRG"`
-      link=`expr "$ls" : '.*-> \(.*\)$'`
-      if expr "$link" : '/.*' > /dev/null; then
-        PRG="$link"
-      else
-        PRG=`dirname "$PRG"`/"$link"
-      fi
-done
-
-PRGDIR=`dirname "$PRG"` && PRGDIR=`cd "$PRGDIR" >/dev/null; pwd`
-
-# go project basePath
-cd "$PRGDIR/.."
+PRGDIR=`dirname "$0"`/../
+cd "$PRGDIR"
+PRGDIR=`cd $PRGDIR  >/dev/null; pwd `
 
 rm -rf dist
-mkdir -p dist
+mkdir dist
 
-tar cvfz dist/wilddog-doc.tar.gz *  --exclude=".*" --exclude=node_modules --exclude=dist .
+gulp build
+cd dist
+tar cvfz wilddog-doc.tar.gz *  --exclude=".*" --exclude=node_modules .

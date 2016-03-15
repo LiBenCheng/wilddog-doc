@@ -14,7 +14,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 gulp.task('copy', function () {
-    return gulp.src(['bower_components/**/*.*', 'views/**/*.html','README.md', 'config.js', 'app.js', 'bin/www', 'markdown-toc.js', 'marked.js', 'raneto.js', 'content/**/*', 'package.json', 'public/*.*', 'public/fonts/**/*.*', 'node_modules/**/*.*'], {
+    return gulp.src(['bower_components/**/*.*', 'views/**/*.html','README.md', 'config.js', 'app.js', 'bin/www', 'bin/*.*', 'markdown-toc.js', 'marked.js', 'raneto.js', 'content/**/*', 'package.json', 'public/*.*', 'public/fonts/**/*.*', 'node_modules/**/*.*'], {
             base: '.',
             'buffer': false
         })
