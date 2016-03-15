@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /etc/profile
+
 function help() {
         echo "Usage: $0 start|stop|restart"
 }
