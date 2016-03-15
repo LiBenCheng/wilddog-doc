@@ -1027,8 +1027,7 @@ ref.once('child_added',function(snapshot){
 
 ----
 
-<!--
-orderByChild() 未实现TODO
+## orderByChild() 
 
 ###### 定义
 
@@ -1036,28 +1035,29 @@ orderByChild ( key )
 
 ###### 说明
 
-产生一个新`Query`对象，按照特定子节点的值进行排序
+产生一个新`Query`对象，按照特定子节点的值进行排序。排序的详情请参考[数据排序](/web/guide/4#shu-ju-pai-xu0)。
 
 ###### 参数
 
-key `String`
+* key `String`
 
 指定用来排序的子节点的key
 
 ###### 返回值
 
-新生成的`Query` 对象的引用
+* 新生成的`Query` 对象的引用
 
 ###### 示例
 
 ```js
+
 var ref = new Wilddog("https://<appId>.wilddogio.com/student");
 ref.orderByChild("height").on("child_added",function(snapshot){
   console.log(snapshot.key() + "is" + snapshot.val().height +"meters tall");
 });
-```
--->
 
+```
+----
 
 ## orderByKey()
 
@@ -1083,8 +1083,9 @@ ref.orderByKey().on("child_added",function(snapshot){
 });
 ```
 
-<!--
-orderByValue() 未实现TODO
+----
+
+## orderByValue() 
 
 ###### 定义
 
@@ -1092,23 +1093,25 @@ orderByValue()
 
 ###### 说明
 
-产生一个新`Query`对象，按照当前节点的值进行排序
+产生一个新`Query`对象，按照当前节点的值进行排序。排序的详情请参考[数据排序](/web/guide/4#shu-ju-pai-xu0)。
 
 ###### 返回值
 
-新生成的`Query` 对象的引用
+* 新生成的`Query` 对象的引用
 
 ###### 示例
 
 ```js
+
 var scoresRef = new Wilddog("https://<appId>.wilddogio.com/scores");
+
 scoresRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
   snapshot.forEach(function(data) {
     console.log("The " + data.key() + " score is " + data.val());
   });
 }
+
 ```
--->
 
 ----
 
