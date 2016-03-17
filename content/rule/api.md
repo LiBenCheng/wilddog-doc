@@ -498,6 +498,7 @@ Boolean
 ".read": "auth.identifier.beginsWith('internal-')"
 ```
 -->
+
 ----
 
 ## endsWith()
