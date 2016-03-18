@@ -18,7 +18,7 @@ WildDog 提供了离线事件功能，使得客户端连接断开时，指定的
 Objective-C
 
 ```
-Wilddog *presenceRef = [[Wilddog alloc] initWithUrl:@"https://<YOUR-WILDDOG-APP>.wilddogio.com/disconnectmessage"];
+Wilddog *presenceRef = [[Wilddog alloc] initWithUrl:@"https://samplechat.wilddogio.com/disconnectmessage"];
 // 当客户端连接中断时，写入一个字符串
 [presenceRef onDisconnectSetValue:@"I disconnected!"];
 
@@ -27,7 +27,7 @@ Wilddog *presenceRef = [[Wilddog alloc] initWithUrl:@"https://<YOUR-WILDDOG-APP>
 Swift
 
 ```
-var presenceRef = Wilddog(url:"https://<YOUR-WILDDOG-APP>.wilddogio.com/disconnectmessage")
+var presenceRef = Wilddog(url:"https://samplechat.wilddogio.com/disconnectmessage")
 // 当客户端连接中断时，写入一个字符串
 presenceRef.onDisconnectSetValue("I disconnected!")
 
@@ -88,7 +88,7 @@ presenceRef.cancelDisconnectOperations()
 Objective-C
 
 ```
-Wilddog *connectedRef = [[Wilddog alloc] initWithUrl:@"https://<YOUR-WILDDOG-APP>.wilddogio.com/.info/connected"];
+Wilddog *connectedRef = [[Wilddog alloc] initWithUrl:@"https://samplechat.wilddogio.com/.info/connected"];
 [connectedRef observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
   if([snapshot.value boolValue]) {
     NSLog(@"connected");
@@ -102,7 +102,7 @@ Wilddog *connectedRef = [[Wilddog alloc] initWithUrl:@"https://<YOUR-WILDDOG-APP
 Swift
 
 ```
-var connectedRef = Wilddog(url:"https://<YOUR-WILDDOG-APP>.wilddogio.com/.info/connected")
+var connectedRef = Wilddog(url:"https://samplechat.wilddogio.com/.info/connected")
 connectedRef.observeEventType(.Value, withBlock: { snapshot in
     let connected = snapshot.value as? Bool
     if connected != nil && connected! {
@@ -126,7 +126,7 @@ WildDog 提供了一种将云端时间戳作为数据写入的机制。这个机
 Objective-C
 
 ```
-Wilddog *userLastOnlineRef = [[Wilddog alloc] initWithUrl:@"https://<YOUR-WILDDOG-APP>.wilddogio.com/users/joe/lastOnline"];
+Wilddog *userLastOnlineRef = [[Wilddog alloc] initWithUrl:@"https://samplechat.wilddogio.com/users/joe/lastOnline"];
 [userLastOnlineRef onDisconnectSetValue:kWilddogServerValueTimestamp];
 
 ```
@@ -134,7 +134,7 @@ Wilddog *userLastOnlineRef = [[Wilddog alloc] initWithUrl:@"https://<YOUR-WILDDO
 Swift
 
 ```
-var userLastOnlineRef = Wilddog(url:"https://<YOUR-WILDDOG-APP>.wilddogio.com/users/joe/lastOnline")
+var userLastOnlineRef = Wilddog(url:"https://samplechat.wilddogio.com/users/joe/lastOnline")
 userLastOnlineRef.onDisconnectSetValue([".sv": "timestamp"])
 
 ```

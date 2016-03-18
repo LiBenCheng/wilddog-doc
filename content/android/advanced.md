@@ -14,7 +14,7 @@ WildDog提供了离线事件功能，使得客户端连接断开时，指定的�
 下面是一个例子，使用`onDisconnect()`方法，在离线的时候写入数据：
 
 ```java
-Wilddog presenceRef = new Wilddog("https://<appId>.wilddogio.com/disconnectmessage");
+Wilddog presenceRef = new Wilddog("https://samplechat.wilddogio.com/disconnectmessage");
 // 当客户端连接中断时，写入一个字符串
 presenceRef.onDisconnect().setValue("I disconnected!");
 ```
@@ -47,7 +47,7 @@ onDisconnectRef.cancel();
 在许多应用场景下，客户端需要知道自己是否在线。WildDog客户端提供了一个特殊的数据地址，即 `/.info/connected`。每当客户端的连接状态发生改变时，这个地址的数据都会被更新。
 
 ```java
-Wilddog connectedRef = new Wilddog("https://<appId>.wilddogio.com/.info/connected");
+Wilddog connectedRef = new Wilddog("https://samplechat.wilddogio.com/.info/connected");
 connectedRef.addValueEventListener(new ValueEventListener() {
   @Override
   public void onDataChange(DataSnapshot snapshot) {
@@ -74,7 +74,7 @@ connectedRef.addValueEventListener(new ValueEventListener() {
 WildDog提供了一种将云端时间戳作为数据写入的机制。这个机制和`onDisconnect()`方法组合起来，很容易实现记录客户端断线事件的功能：
 
 ```java
-Wilddog userLastOnlineRef = new Wilddog("https://<appId>.wilddogio.com/users/joe/lastOnline");
+Wilddog userLastOnlineRef = new Wilddog("https://samplechat.wilddogio.com/users/joe/lastOnline");
 userLastOnlineRef.onDisconnect().setValue(ServerValue.TIMESTAMP);
 ```
 
@@ -85,7 +85,7 @@ userLastOnlineRef.onDisconnect().setValue(ServerValue.TIMESTAMP);
 当处理可能被并发更新导致损坏的复杂数据时，比如增量计数器，我们提供了事务操作。事务操作需要提供两个参数：一个更新方法和一个可选的完成 callback 方法。更新方法提供当前数据，当前数据是云端读取的。举例说明，如果我们想在一个的博文上计算点赞的数量，我们可以这样写一个事务： 
 
 ```java
-Wilddog upvotesRef = new Wilddog("https://<appId>.wilddogio.com/android/saving-data/wildblog/posts/-JRHTHaIs-jNPLXOQivY/upvotes");
+Wilddog upvotesRef = new Wilddog("https://docs-examples.wilddogio.com/android/saving-data/wildblog/posts/-JRHTHaIs-jNPLXOQivY/upvotes");
 
 upvotesRef.runTransaction(new Transaction.Handler() {
     public Transaction.Result doTransaction(MutableData currentData) {

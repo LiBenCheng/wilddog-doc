@@ -16,7 +16,7 @@ Tmpl : page
 set() 是最基本的写数据操作，它设置当前指定数据节点的值，如果当前节点已经存在，旧值将被覆盖。为了理解 set() 的工作原理，我们创建一个简单的博客应用，这个博客的数据储存在这里：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/web/saving-data/wildblog");
+var ref = new Wilddog("https://docs-examples.wilddogio.com/web/saving-data/wildblog");
 ```
 我们用用户名来唯一标识一个用户，并存储他们的全名和生日。我们已经创建了一个引用，接下来用 set() 储存数据，set() 可以传入 `string`, `number`, `boolean`, `object` 类型:
 ```js
@@ -142,7 +142,7 @@ WildDog提供了四种数据事件：`value`，`child_added`，`child_changed`�
 
 ```js
 // 获得一个数据库连接实例
-var ref = new Wilddog("https://<appId>.wilddogio.com/web/saving-data/blog/posts");
+var ref = new Wilddog("https://docs-examples.wilddogio.com/web/saving-data/wildblog/posts");
 
 // 获得新增加的数据
 ref.on("child_added", function(snapshot) {
@@ -159,7 +159,7 @@ ref.on("child_added", function(snapshot) {
 
 ```js
 // 获得一个数据库连接实例
-var ref = new Wilddog("https://<appId>.wilddogio.com/web/saving-data/blog/posts");
+var ref = new Wilddog("https://docs-examples.wilddogio.com/web/saving-data/wildblog/posts");
 // 获得发生改变的数据
 ref.on("child_changed", function(snapshot) {
   var changedPost = snapshot.val();
@@ -174,7 +174,7 @@ ref.on("child_changed", function(snapshot) {
 
 ```js
 // 获得一个数据库连接实例
-var ref = new Wilddog("https://<appId>.wilddogio.com/web/saving-data/blog/posts");
+var ref = new Wilddog("https://docs-examples.wilddogio.com/web/saving-data/wildblog/posts");
 // 获取被删除的数据
 ref.on("child_removed", function(snapshot) {
   var deletedPost = snapshot.val();
@@ -193,7 +193,7 @@ WildDog查询数据的方式是绑定一个异步监听的回调方法，每当�
 
 ```js
 // 获得一个数据库连接实例
-var ref = new Wilddog("https://<appId>.wilddogio.com/web/saving-data/blog/posts");
+var ref = new Wilddog("https://docs-examples.wilddogio.com/web/saving-data/wildblog/posts");
 
 // 监听数据
 ref.on("value", function(snapshot) {
@@ -251,7 +251,7 @@ WildDog支持选择性的查询数据。要构造一个查询，需要先指定�
 通过将子节点的路径名作为参数传递给`orderByKey()`，可以实现按指定子节点排序。例如，要按照height进行排序，可以：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByChild("height").on("child_added", function(snapshot) {
   console.log(snapshot.key() + " was " + snapshot.val().height + " meters tall");
 });
@@ -263,7 +263,7 @@ ref.orderByChild("height").on("child_added", function(snapshot) {
 **按照数据节点名称排序**
 使用`orderByKey()`方法，可以实现按照数据节点的名称进行排序。下面的例子按照alpha字母顺序读取所有的恐龙数据：
 ```
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByKey().on("child_added", function(snapshot) {
   console.log(snapshot.key());
 });
@@ -288,7 +288,7 @@ ref.orderByKey().on("child_added", function(snapshot) {
 要按照得分进行排序，我们可以构造一个这样的查询：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/scores");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/scores");
 scoresRef.orderByValue().on("value", function(snapshot) {
   snapshot.forEach(function(data) {
     console.log("The " + data.key() + " dinosaur's score is " + data.val());
@@ -308,7 +308,7 @@ scoresRef.orderByValue().on("value", function(snapshot) {
 继续恐龙的例子，我们可以获得体重最大的两种恐龙：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByChild("weight").limitToLast(2).on("child_added", function(snapshot) {
   console.log(snapshot.key());
 });
@@ -319,7 +319,7 @@ ref.orderByChild("weight").limitToLast(2).on("child_added", function(snapshot) {
 同理，我们可以使用`limitToFirst()`方法查询最矮的两种恐龙：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByChild("height").limitToFirst(2).on("child_added", function(snapshot) {
   console.log(snapshot.key());
 });
@@ -328,7 +328,7 @@ ref.orderByChild("height").limitToFirst(2).on("child_added", function(snapshot) 
 我们也可以组合`orderByValue()`方法来使用limit类的查询。如果要构造出恐龙运动会得分的前3名，我们可以构造这样一个查询：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/scores");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/scores");
 scoresRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
   snapshot.forEach(function(data) {
     console.log("The " + data.key() + " dinosaur's score is " + data.val());
@@ -340,7 +340,7 @@ scoresRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
 使用`startAt()`，`endAt()`，和`equalTo()`方法，我们可以任意指定任意值的范围进行查询。例如，如果要查询所有至少3米高以上的恐龙，可以组合`orderByChild()`和`startAt()`查询：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
   console.log(snapshot.key())
 });
@@ -349,7 +349,7 @@ ref.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
 我们可以使用`endAt()`来查询按照字母排序，所有名字排在Pterodactyl之前的恐龙：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
   console.log(snapshot.key());
 });
@@ -360,7 +360,7 @@ ref.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
 我们可以同时使用`startAt()`和`endAt()`来限定一个范围。下面的例子查询出所有名字以字母“b”开头的恐龙：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByKey().startAt("b").endAt("b~").on("child_added", function(snapshot) {
   console.log(snapshot.key());
 });
@@ -371,7 +371,7 @@ ref.orderByKey().startAt("b").endAt("b~").on("child_added", function(snapshot) {
 使用`equalTo()`方法，可以进行精准的查询。例如，查询所有的25米高的恐龙：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.orderByChild("height").equalTo(25).on("child_added", function(snapshot) {
   console.log(snapshot.key());
 });
@@ -384,7 +384,7 @@ ref.orderByChild("height").equalTo(25).on("child_added", function(snapshot) {
 组合这些方法，我们可以构造出各种复杂的查询。例如，要找出长度小于Stegosaurus但最接近的恐龙的名字：
 
 ```js
-var ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.child("stegosaurus").child("height").on("value", function(stegosaurusHeightSnapshot) {
   var favoriteDinoHeight = stegosaurusHeightSnapshot.val();
   var queryRef = ref.orderByChild("height").endAt(favoriteDinoHeight).limitToLast(2)

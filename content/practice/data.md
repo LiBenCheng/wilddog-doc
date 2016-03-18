@@ -153,7 +153,7 @@ Tmpl : page
 如果我们要判断Mary是否属于 alpha group，以 javascript 代码为例：
 ```js
 // 判断Mary是否属于alpha group
-var ref = new Wilddog("https://<appId>.wilddogio.com/web/org/users/mchen/groups/alpha");
+var ref = new Wilddog("https://docs-examples.wilddogio.com/web/org/users/mchen/groups/alpha");
 ref.once('value', function(snap) {
   var result = snap.val() === null? 'is not' : 'is';
   console.log('Mary ' + result + ' a member of alpha group');

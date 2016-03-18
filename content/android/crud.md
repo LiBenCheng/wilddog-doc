@@ -19,7 +19,7 @@ Tmpl : page
 ### 使用setValue()写入数据
 wilddog通常使用`setValue()`方法来写入数据，该方法用来覆盖指定路径上的所有数据。为了更好地理解该方法，我们建立一个博客app来说明。app的数据保存在下面引用对应的路径中：
 ```Java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/android/saving-data/wildblog");
+Wilddog ref = new Wilddog("https://docs-examples.wilddogio.com/android/saving-data/wildblog");
 ```
 我们添加一些用户，为每个用户保存唯一的用户名，同时保存全名和出生日期。由于每个用户的用户名都是独一无二的，所以最好使用setValue()方法，而不是push()方法，因为我们已经有了独一无二的用户名作为key值，不需要在添加的时候重新生成唯一标识。
 
@@ -60,7 +60,7 @@ usersRef.setValue(users);
 1. 对象所属的类中存在默认的构造方法; 
 2. 类中所有需要写入数据库的属性都有getter方法。
 
-我们使用Map将数据保存到数据库中，因为Map中的元素会自动映射成为JSON对象，并保存到指定路径。现在，我们访问 `https://<appId>.wilddogio.com/android/saving-data/wildblog/users/alanisawesome/fullName`，将会看到返回值"Alan Turing"。我们也可以直接将数据保存到数据库的指定路径：
+我们使用Map将数据保存到数据库中，因为Map中的元素会自动映射成为JSON对象，并保存到指定路径。现在，我们访问 `https://docs-examples.wilddogio.com/android/saving-data/wildblog/users/alanisawesome/fullName`，将会看到返回值"Alan Turing"。我们也可以直接将数据保存到数据库的指定路径：
 ```Java
 //使用父节点引用的child()方法，获得指向子数据节点的引用。
 usersRef.child("alanisawesome").child("fullName").setValue("Alan Turing");
@@ -218,7 +218,7 @@ wilddog支持四种事件：`Value`， `Child Added`， `Child Changed`， `Chil
 
 ```java
 // 获得一个Wilddog引用，指向post数据。
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/android/saving-data/wildblog/posts");
+Wilddog ref = new Wilddog("https://docs-examples.wilddogio.com/android/saving-data/wildblog/posts");
 ref.addChildEventListener(new ChildEventListener() {
     // 获得增加到posts节点下的数据
     @Override
@@ -266,7 +266,9 @@ public void onChildRemoved(DataSnapshot snapshot) {
 WildDog通过绑定一个异步的EventListener来读取数据。listener将会在数据初次被获取到的时候执行一次，此后每次数据发生变化都会被执行。让我们继续以博客app的例子，看看如何从云端读取数据。我们可以使用 `addValueEventListener()` 监听一个数据节点的变化。
 
 ```Java
-    Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/android/saving-data/wildblog/posts");
+
+
+    Wilddog ref = new Wilddog("https://docs-examples.wilddogio.com/android/saving-data/wildblog/posts");
     // 设置一个Listener，用来读取数据
 	ref.addValueEventListener(new ValueEventListener(){
 		public void onDataChange(DataSnapshot snapshot) {
@@ -360,7 +362,7 @@ public class DinosaurFacts {
 通过将子节点的路径名作为参数调用`orderByChild()`方法，可以实现按指定子节点排序。例如，要按照height进行排序，可以：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByChild("height");
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -381,7 +383,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 使用`orderByKey()`方法，可以实现按照数据节点的名称进行排序。下面的例子按照alpha字母顺序读取所有的恐龙数据：
 
 ``` java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByKey();
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -411,7 +413,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 要按照得分进行排序，我们可以构造一个这样的查询：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = scoresRef.orderByValue();
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -434,7 +436,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 继续恐龙的例子，我们可以获得体重最大的两种恐龙：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByChild("weight").limitToLast(2);
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -450,7 +452,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 同理，我们可以使用`limitToFirst()`方法查询最矮的两种恐龙：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByChild("height").limitToFirst(2);
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -464,7 +466,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 我们也可以组合`orderByValue()`方法来使用limit类的查询。如果要构造出恐龙运动会得分的前3名，我们可以构造这样一个查询：
 
 ```java
-Wilddog scoresRef = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog scoresRef = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = scoresRef.orderByValue().limitToLast(3);
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -479,7 +481,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 使用`startAt()`，`endAt()`，和`equalTo()`方法，可以为我们的查询指定任意的起止范围。例如，如果要查询所有3米高以上的恐龙，可以组合`orderByChild()`和`startAt()`查询：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByChild("height").startAt(3);
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -493,7 +495,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 我们可以使用`endAt()`来查询按照字母排序，所有名字排在Pterodactyl之前的恐龙：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByKey().endAt("pterodactyl");
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -509,7 +511,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 我们可以同时使用`startAt()`和`endAt()`来限定一个范围。下面的例子查询出所有名字以字母“b”开头的恐龙：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByKey().startAt("b").endAt("b~");
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -525,7 +527,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 使用`equalTo()`方法，可以进行精准的查询。例如，查询所有的25米高的恐龙：
 
 ```java
-Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 Query queryRef = ref.orderByChild("height").equalTo(25);
 queryRef.addChildEventListener(new ChildEventListener() {
     @Override
@@ -543,7 +545,7 @@ queryRef.addChildEventListener(new ChildEventListener() {
 组合这些方法，我们可以构造出各种复杂的查询。例如，要找出高度小于Stegosaurus但最接近的恐龙的名字：
 
 ```java
-final Wilddog ref = new Wilddog("https://<appId>.wilddogio.com/dinosaurs");
+final Wilddog ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
 ref.child("stegosaurus").child("height").addListenerForSingleValueEvent(new ValueEventListener() {
     @Override
     public void onDataChange(DataSnapshot stegosaurusHeightSnapshot) {
