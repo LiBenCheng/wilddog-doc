@@ -86,7 +86,7 @@ userLastOnlineRef.onDisconnect().set(Wilddog.ServerValue.TIMESTAMP);
 当处理可能被并发更新导致损坏的复杂数据时，比如增量计数器，我们提供了事务操作。事务操作需要提供两个参数：一个更新方法和一个可选的完成 callback 方法。更新方法提供当前数据，当前数据是云端读取的。举例说明，如果我们想在一个的博文上计算点赞的数量，可以这样写一个事务： 
 
 ```js
-var upvotesRef = new Firebase('https://docs-examples.wilddogio.com/saving-data/wildblog/posts/-JRHTHaIs-jNPLXOQivY/upvotes');
+var upvotesRef = new Wilddog('https://docs-examples.wilddogio.com/saving-data/wildblog/posts/-JRHTHaIs-jNPLXOQivY/upvotes');
 
 upvotesRef.transaction(function (currentValue) {
   return (currentValue || 0) + 1;
