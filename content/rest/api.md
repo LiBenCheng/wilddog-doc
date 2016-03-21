@@ -274,6 +274,7 @@ curl -X GET -d '{".sv": "timestamp"}' 'https://<appId>.wilddogio.com/.json'
 该操作将会直接返回服务器的当前时间戳，而不包括查询的数据。
 
 服务端数值现在只支持时间戳，关于unix时间戳的百科，请参考[百科](http://baike.baidu.com/link?url=VQMFk3ej6ORZFtAhKYF5P6ow_p1XqZ5RgzFHNQFJNgc5U_DCT4nH6MVXkIvSmvO5gLP5DrB7ZsrnZc-2cT5bHa)。
+
 ----
 
 # 错误原因
