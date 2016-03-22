@@ -248,7 +248,7 @@ WildDog支持选择性的查询数据。要构造一个查询，需要先指定�
 }
 ```
 **按照指定的子节点排序**
-通过将子节点的路径名作为参数传递给`orderByKey()`，可以实现按指定子节点排序。例如，要按照height进行排序，可以：
+通过将子节点的路径名作为参数传递给`orderByChild()`，可以实现按指定子节点排序。例如，要按照height进行排序，可以：
 
 ```js
 var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/dinosaurs");
@@ -289,7 +289,7 @@ ref.orderByKey().on("child_added", function(snapshot) {
 
 ```js
 var ref = new Wilddog("https://dinosaur-facts.wilddogio.com/scores");
-scoresRef.orderByValue().on("value", function(snapshot) {
+ref.orderByValue().on("value", function(snapshot) {
   snapshot.forEach(function(data) {
     console.log("The " + data.key() + " dinosaur's score is " + data.val());
   });
