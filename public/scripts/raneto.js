@@ -18,25 +18,6 @@
 
 })(jQuery, hljs);
 
-//搜索
-var searchStart = function (data) {
-    if (data) {
-        window.location.href = encodeURI("/?search=" + data);
-    };
-};
-
-$(".search").click(function (event) {
-    event.preventDefault();
-    var searchContent = $(this).siblings(".search-input").val();
-    searchStart(searchContent);
-});
-$(window).keypress(function (event) {
-    if (event.keyCode == 13) {
-        //移动端还是pc端回车来搜素
-        var searchContent = $(".searchbar").find(".search-input").val();
-        searchStart(searchContent);
-    }
-});
 
 function loadOver() {
     var tocFirstH = $(".toc>ul>li:first").outerHeight() + 43;
@@ -101,6 +82,27 @@ function loadOver() {
     backTop.click(function (event) {
         $(window).scrollTop(0);
     });
-    
-    $(".api-content-text h6").prev().css("margin-bottom","1.5rem");
+
+    $(".api-content-text h6").prev().css("margin-bottom", "1.5rem");
 };
+
+
+//搜索
+var searchStart = function (data) {
+    if (data) {
+        window.location.href = encodeURI("/?search=" + data);
+    };
+};
+
+$(".search").click(function (event) {
+    event.preventDefault();
+    var searchContent = $(this).siblings(".search-input").val();
+    searchStart(searchContent);
+});
+$(window).keypress(function (event) {
+    if (event.keyCode == 13) {
+        //移动端还是pc端回车来搜素
+        var searchContent = $(".searchbar").find(".search-input").val();
+        searchStart(searchContent);
+    }
+});
