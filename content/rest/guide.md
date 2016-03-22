@@ -39,12 +39,12 @@ Tmpl : page
 
 ### 使用数据URL
 
-通过REST API读取和写入数据时，我们在`curl`请求中包含一个指向数据地址的URL，这个URL会指向我们存储的所有数据。在这个示例中，我们将使用`https://<appId>.wilddogio.com/rest/data`这个地址。
+通过REST API读取和写入数据时，我们在`curl`请求中包含一个指向数据地址的URL，这个URL会指向我们存储的所有数据。在这个示例中，我们将使用`https://docs-examples.wilddogio.com/web/data`这个地址。
 
 也可以直接访问子节点的数据，例如，要访问Mary Chen的name，只需要在URL之后追加`users/mchen/name`即可。
 
 ```
-curl https://<appId>.wilddogio.com/web/data/users/mchen/name.json
+curl https://docs-examples.wilddogio.com/web/data/users/mchen/name.json
 ```
 
 <!--
@@ -135,7 +135,7 @@ Wilddog对数组没有原生的支持，如果要存储数组，实际上存储�
 
 ### 使用PUT来写入数据
 
-REST API基本的写入数据的操作是`PUT`。为了演示数据存储，我们将建立一个博客应用，应用的所有数据都存储在Wilddog应用对应的URl`https://<appId>.wilddogio.com/rest/saving-data/wildblog`中。
+REST API基本的写入数据的操作是`PUT`。为了演示数据存储，我们将建立一个博客应用，应用的所有数据都存储在Wilddog应用对应的URl`https://docs-examples.wilddogio.com/rest/saving-data/wildblog`中。
 
 下面来存储一些用户的数据到数据库中，我们存储每个用户的唯一用户名，还存储全名和出生日期。由于用户名是独一无二的，所以适合使用`PUT`而不是`POST`方法，因为我们已经有作为key值的字段，不需要生成。
 
@@ -146,17 +146,17 @@ curl -X PUT -d '{
     "name": "Alan Turing",
     "birthday": "June 23, 1912"
   }
-}' 'https://<appId>.wilddogio.com/rest/saving-data/wildblog/users.json'
+}' 'https://docs-examples.wilddogio.com/rest/saving-data/wildblog/users.json'
 ```
 
 当一个JSON对象被存储到数据库中，对象的属性被自动映射到指定位置。如果我们定位到新添加的节点上，我们会看到值“Alan Turing”，我们也可以直接保存数据到子路径节点上：
 ```
 curl -X PUT -d '"Alan Turing"' \
-  'https://<appId>.wilddogio.com/rest/saving-data/wildblog/users/alanisawesome/name.json'
+  'https://docs-examples.wilddogio.com/rest/saving-data/wildblog/users/alanisawesome/name.json'
 ```
 ```
 curl -X PUT -d '"June 23, 1912"' \
-  'https://<appId>.wilddogio.com/rest/saving-data/wildblog/users/alanisawesome/birthday.json'
+  'https://docs-examples.wilddogio.com/rest/saving-data/wildblog/users/alanisawesome/birthday.json'
 ```
 
 以上两个例子采用了两种方法写入数据：一次性写入一个JSON对象，和分别写入每个子数据节点。两种方式最终写入数据的结果是一样的：
@@ -181,7 +181,7 @@ curl -X PUT -d '"June 23, 1912"' \
 curl -X PATCH -d '{
   "nickname": "ACE"
 }' \
-  'https://<appId>.wilddogio.com/rest/saving-data/users/alanisawesome.json'
+  'https://docs-examples.wilddogio.com/rest/saving-data/users/alanisawesome.json'
 ```
 
 上面的请求将`nickname`添加到`alanisawesome`对象而不删除子节点`name`和`birthday`。如果使用的是`PUT`请求，`name`和`birthday`将会被删除，因为他们没有出现在请求中。执行完`PATCH`请求之后，数据库中的数据如下：
@@ -208,14 +208,14 @@ curl -X PATCH -d '{
 curl -X POST -d '{
   "author": "alanisawesome",
   "title": "The Turing Machine"
-}' 'https://<appId>.wilddogio.com/rest/saving-data/wildblog/posts.json'
+}' 'https://docs-examples.wilddogio.com/rest/saving-data/wildblog/posts.json'
 ```
 我们的`posts`路径下的数据将会是这样：
 
 ```json
 {
   "posts": {
-    "-JSOpn9ZC54A4P4RoqVa": {
+    "-JRHTHaKuITFIhnj02kE": {
       "author": "alanisawesome",
       "title": "The Turing Machine"
     }
@@ -223,10 +223,10 @@ curl -X POST -d '{
 }
 ```
 
-注意，`key-JSOpn9ZC54A4P4RoqVa`是自动生成的，因为我们使用的是`POST`请求。成功的请求将返回HTTP 200 OK状态码，并且响应中会包含新数据的key。
+注意，`key-JRHTHaKuITFIhnj02kE`是自动生成的，因为我们使用的是`POST`请求。成功的请求将返回HTTP 200 OK状态码，并且响应中会包含新数据的key。
 
 ```
-{"name":"-JSOpn9ZC54A4P4RoqVa"}
+{"name":"-JRHTHaKuITFIhnj02kE"}
 ```
 
 ### 删除数据
@@ -250,7 +250,7 @@ curl -X DELETE \
 
 ```
 curl -X POST -d '{"Authenticated POST request"}' \
-  'https://<appId>.wilddogio.com/rest/saving-data/auth-example.json?auth=CREDENTIAL'
+  'https://docs-examples.wilddogio.com/rest/saving-data/auth-example.json?auth=CREDENTIAL'
 ```
 
 **print**
@@ -263,7 +263,7 @@ curl -X POST -d '{"Authenticated POST request"}' \
 服务端数值使用占位符： `.sv`。`.sv`的值就是我们期望的服务端数值类型。例如，当一个用户被创建的时候需要设置一个时间戳，我们应该如下操作：
 ```
 curl -X PUT -d '{".sv": "timestamp"}' \
-  'https://<appId>.wilddogio.com/rest/saving-data/alanisawesome/createdAt.json'
+  'https://docs-examples.wilddogio.com/rest/saving-data/alanisawesome/createdAt.json'
 ```
 服务端数值现在只支持时间戳，关于unix时间戳的百科，请参考[百科](http://baike.baidu.com/link?url=VQMFk3ej6ORZFtAhKYF5P6ow_p1XqZ5RgzFHNQFJNgc5U_DCT4nH6MVXkIvSmvO5gLP5DrB7ZsrnZc-2cT5bHa)。
 
@@ -291,7 +291,7 @@ REST API将在以下情况返回错误码：
 我们可以发送`GET`请求到数据的URL来读取数据，让我们继续博客的示例，读取全部的博客数据。
 
 ```
-curl 'https://<appId>.wilddogio.com/rest/saving-data/wdblog/posts.json?print=pretty'
+curl 'https://docs-examples.wilddogio.com/rest/saving-data/wdblog/posts.json?print=pretty'
 ```
 
 成功的请求将返回HTTP 200 OK状态码，并且响应中会包含读取到的数据。
@@ -305,12 +305,12 @@ curl 'https://<appId>.wilddogio.com/rest/saving-data/wdblog/posts.json?print=pre
 
 ```
 curl -X POST -d '{"Authenticated POST request"}' \
-  'https://<appId>.wilddogio.com/rest/saving-data/auth-example.json?auth=CREDENTIAL'
+  'https://docs-examples.wilddogio.com/rest/saving-data/auth-example.json?auth=CREDENTIAL'
 ```
 
 **print**
 指定`print=pretty`返回易读格式的数据。
-```
+```s
 curl 'https://<appId>.wilddogio.com/users/jack/name.json?print=pretty'
 ```
 指定`print=silent`返回204 No Content状态码
@@ -382,7 +382,7 @@ curl 'https://<appId>.wilddogio.com/users/jack/name.json?print=silent'
 将子节点的名称传给`orderBy`参数，就可以按照指定子节点的value值进行排序。
 例如，想要查询所有的高度大于等于3米的恐龙，我们可以使用以下参数查询：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="height"&startAt=3&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="height"&startAt=3&print=pretty'
 ```
 
 注意：
@@ -392,7 +392,7 @@ curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="height"&startAt=3&pr
 可以通过使用`orderBy="$key"`参数来按照节点名称查询数据。
 下面的例子将返回名称在a到m之间所有的节点：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="$key"&startAt="a"&endAt="m"&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="$key"&startAt="a"&endAt="m"&print=pretty'
 ```
 
 **按照节点的value值排序**
@@ -412,7 +412,7 @@ curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="$key"&startAt="a"&en
 ```
 要查询所有成绩高于50分的恐龙，我们可以使用以下参数查询：
 ```
-curl 'https://<appId>.wilddogio.com/scores.json?orderBy="$value"&startAt=50&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/scores.json?orderBy="$value"&startAt=50&print=pretty'
 ```
 参考数据排序部分的介绍，了解使用`orderBy="$value"`参数查询时，数据是如何排序的。
 
@@ -431,31 +431,31 @@ curl 'https://<appId>.wilddogio.com/scores.json?orderBy="$value"&startAt=50&prin
 
 在恐龙数据库中使用`orderBy`和`limitToLast`，我们可以得到体重最重的两头恐龙的信息：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="weight"&limitToLast=2&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="weight"&limitToLast=2&print=pretty'
 ```
 同样，我们可以使用`limitToFirst`参数来得到高度最小的两头恐龙的信息：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="height"&limitToFirst=2&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="height"&limitToFirst=2&print=pretty'
 ```
 我们可以将`limitToLast`参数与`orderBy="$value"`参数配合使用。例如，我们给恐龙运动会创建一个排行榜，查询分数最高的三头恐龙，则可以使用以下参数查询：
 ```
-curl 'https://<appId>.wilddogio.com/scores.json?orderBy="$value"&limitToLast=3&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/scores.json?orderBy="$value"&limitToLast=3&print=pretty'
 ```
 
 **range查询**
 使用`startAt`，`endAt`和`equalTo`参数来设置查询范围的起点和终点。例如，我们想要查询至少3米高的恐龙，可以使用`orderBy`和`startAt`的组合查询：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="height"&startAt=3&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="height"&startAt=3&print=pretty'
 ```
 
 我们可以使用`endAt`参数来查询名字的字典顺序在Pterodactyl之前的所有的恐龙：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="$key"&endAt="pterodactyl"&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="$key"&endAt="pterodactyl"&print=pretty'
 ```
 
 我们可以使用`startAt`和`endAt`的组合来控制我们查询的范围。下面的例子是查询名字以b开头的所有的恐龙：
 ```
-curl 'https://<appId>.wilddogio.com/dinosaurs.json?orderBy="$key"&startAt="b"&endAt="b~"&print=pretty'
+curl 'https://dinosaur-facts.wilddogio.com/dinosaurs.json?orderBy="$key"&startAt="b"&endAt="b~"&print=pretty'
 ```
 波浪线在ASCII中的编码是126，它排在ASCII中常规字符的后面，查询返回的是所有b开头的字符串。
 

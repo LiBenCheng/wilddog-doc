@@ -1054,17 +1054,15 @@ void
 
 ----
 
-##  onChildAdded()
+##  onDataChange()
 
 ###### 定义
-void onChildAdded(DataSnapshot snapshot,
-                  String previousChildName)
+void onDataChange(DataSnapshot snapshot)
 
 ###### 说明 
-一个添加了listener的节点，当有孩子被添加时触发此方法。
+一个添加了 listener 的节点，当有节点改变时触发此方法。
 ###### 参数
-* snapshot `DataSnapshot` 新添加的子节点的数据快照
-* previousChildName 排在被添加的新子节点前面的兄弟节点的key值。如果被添加的是当前节点的第一个子节点，该值为null。
+snapshot `DataSnapshot` 新添加的子节点的数据快照
 
 ###### 返回值
 void
